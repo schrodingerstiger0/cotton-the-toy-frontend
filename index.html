@@ -2,97 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kotton AI Toy</title>
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background: linear-gradient(180deg, #fffbf3 0%, #ffe3e3 100%);
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to bottom, #fff8f3, #ffe0e0);
       margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      height: 100vh;
-      color: #4a2c2a;
+      padding: 20px;
+      color: #333;
     }
 
     h1 {
-      margin-top: 30px;
-      font-size: 2rem;
+      text-align: center;
       color: #ff6b6b;
-      text-align: center;
+      margin-bottom: 10px;
     }
 
-    #status {
-      margin: 10px 0 30px;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #333;
-      text-align: center;
-    }
-
-    .toy-container {
-      background-color: #fff7f0;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 10px 30px rgba(255, 150, 150, 0.3);
-      width: 90%;
+    .container {
       max-width: 400px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
     button {
-      width: 90%;
-      max-width: 300px;
-      margin: 10px 0;
-      padding: 15px 20px;
-      border: none;
-      border-radius: 12px;
+      width: 100%;
+      padding: 15px;
+      margin-top: 10px;
       font-size: 1.1rem;
       font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff6b6b;
       color: white;
-      background: #ff6b6b;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: all 0.2s ease;
-    }
-
-    button:disabled {
-      background-color: #ffc9c9;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.2s;
     }
 
     button:hover:not(:disabled) {
-      transform: scale(1.05);
-      cursor: pointer;
+      transform: scale(1.02);
     }
 
-    footer {
-      margin-top: auto;
-      font-size: 0.8rem;
+    button:disabled {
+      background-color: #ffcfcf;
+    }
+
+    #log {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      margin-top: 20px;
       padding: 10px;
-      text-align: center;
-      color: #aaa;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      height: 150px;
+      overflow-y: auto;
+      white-space: pre-line;
     }
   </style>
 </head>
-
 <body>
-  <h1>🎙️ Talk to Kotton</h1>
-  <div class="toy-container">
-    <p id="status">Click below to begin</p>
+  <h1>🧸 Talk to Kotton</h1>
+
+  <div class="container">
+    <p id="status">Press Start to begin</p>
     <button id="record">▶️ Start Talking</button>
     <button id="stop" disabled>⏹️ Stop & Listen</button>
-  </div>
 
-  <footer>Made with ❤️ by Kotton</footer>
+    <div id="log">[ Kotton Logs ]</div>
+  </div>
 
   <script src="script.js"></script>
 </body>
